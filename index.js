@@ -10,7 +10,12 @@ const app = express();
 app.use(express.json());
 
 const fileupload = require("express-fileupload");
-app.use(fileupload());
+app.use(fileupload({
+  useTempFiles: true,
+  tempFileDir: "/tmp/"
+}));
+
+
 dbConnect();
 cloudinaryConnect();
 app.use("/api/v1/upload", Upload);

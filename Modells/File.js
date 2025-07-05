@@ -13,7 +13,10 @@ const fileSchema = new mongoose.Schema({
     },
     tags:{
         type:String
-    }
+    },
+     videoUrl: {
+    type: String
+  }
 });
 
 module.exports = mongoose.model("File", fileSchema); 
